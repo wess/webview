@@ -58,7 +58,12 @@ typedef enum {
   WEBVIEW_ERROR_OK = 0,
   /// Signifies that something already exists.
   WEBVIEW_ERROR_DUPLICATE = 1,
-  /// Signifies that something does not exist.
+  /// Buffer overflow error.
+  WEBVIEW_ERROR_OVERFLOW = 3,
+  /// Queue is empty.
+  WEBVIEW_ERROR_EMPTY = 4,
+  /// Success.
+  WEBVIEW_SUCCESS = 0,
   WEBVIEW_ERROR_NOT_FOUND = 2
 } webview_error_t;
 

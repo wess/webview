@@ -29,10 +29,30 @@
 #include "errors.h"
 #include "macros.h"
 #include "types.h"
+#include <stddef.h> // For size_t
+
+/**
+ * Sends a message from the main process to the renderer process.
+ *
+ * @param w The webview instance.
+ * @param message The message to send.
+ * @return Error code indicating success or failure.
+ */
+WEBVIEW_API webview_error_t webview_send_message(webview_t w, const char *message);
+
+/**
+ * Receives a message from the renderer process.
+ *
+ * @param w The webview instance.
+ * @param buffer Buffer to store the received message.
+ * @param length Length of the buffer.
+ * @return Error code indicating success or failure.
+ */
+WEBVIEW_API webview_error_t webview_receive_message(webview_t w, char *buffer, size_t length);
 
 #ifdef __cplusplus
 extern "C" {
-#endif
+#endif // WEBVIEW_API_H
 
 /**
  * Creates a new webview instance.
